@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b3c7q3312jqtk"]
+
+[ext_resource type="Script" uid="uid://dm4jmlr0b10od" path="res://banana_spawner.gd" id="1_7qaw4"]
+
+[node name="banana_spawner" type="Node2D" unique_id=1378816993]
+script = ExtResource("1_7qaw4")
+
+[node name="Timer" type="Timer" parent="." unique_id=610843101]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

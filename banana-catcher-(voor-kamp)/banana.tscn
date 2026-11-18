@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://h7bc6ffdw81m"]
+
+[ext_resource type="Texture2D" uid="uid://pi2sv6tin1e5" path="res://assets/banana.jpg" id="1_mb6cj"]
+[ext_resource type="Script" uid="uid://bnej6fnr37oa7" path="res://banana.gd" id="1_s1qo3"]
+[ext_resource type="Texture2D" uid="uid://bw3ls7wl5hv3t" path="res://assets/green banana.jpg" id="3_vgp5d"]
+[ext_resource type="Texture2D" uid="uid://b7sdtomskpt67" path="res://assets/slechte banaan.jpg" id="4_divbi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyfhi"]
+radius = 21.0
+
+[node name="banana" type="Area2D" unique_id=416179459 groups=["bananas"]]
+script = ExtResource("1_s1qo3")
+
+[node name="yellow_sprite" type="Sprite2D" parent="." unique_id=1795631943]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_mb6cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1220651138]
+shape = SubResource("CircleShape2D_wyfhi")
+
+[node name="green_sprite" type="Sprite2D" parent="." unique_id=1842555092]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_vgp5d")
+
+[node name="SlechteBanaan" type="Sprite2D" parent="." unique_id=1488290444]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_divbi")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
